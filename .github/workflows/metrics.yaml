@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: gh-metrics/metrics@latest
+      - uses: gh-metrics/metrics@c3d0fb2f868236deebe8ef6d3ccb97ad701843ff
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: cloutierMat
@@ -28,7 +28,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: gh-metrics/metrics@latest
+      - uses: gh-metrics/metrics@c3d0fb2f868236deebe8ef6d3ccb97ad701843ff
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: cloutierMat
