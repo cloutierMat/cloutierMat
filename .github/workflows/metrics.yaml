@@ -6,46 +6,7 @@ on:
   push: { branches: ["master", "main"] }
 
 jobs:
-  header-iso-calendar:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: gh-metrics/metrics@727b269a0e1af233e88b535a7555bb736e54b4b2
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: cloutierMat
-          template: classic
-          config_timezone: America/Edmonton
-
-          base: ""
-          filename: header-iso-calendar.svg
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-
-  habits:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: gh-metrics/metrics@727b269a0e1af233e88b535a7555bb736e54b4b2
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: cloutierMat
-          template: classic
-          config_timezone: America/Edmonton
-
-          base: ""
-          filename: habits.svg
-          plugin_habits: yes
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
-          plugin_habits_days: 364
-          plugin_habits_facts: yes
-          plugin_habits_from: 1000
-          plugin_habits_languages_limit: 8
-
-  base:
+  metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -58,4 +19,15 @@ jobs:
           config_timezone: America/Edmonton
 
           base: "header, activity, community, repositories, metadata"
-          filename: base.svg
+          filename: metrics.svg
+
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: classic
+          plugin_habits_days: 364
+          plugin_habits_facts: yes
+          plugin_habits_from: 1000
+          plugin_habits_languages_limit: 8
