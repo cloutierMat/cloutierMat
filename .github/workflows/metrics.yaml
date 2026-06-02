@@ -59,4 +59,4 @@ jobs:
           config_timezone: America/Edmonton
 
           base: "header, activity, community, repositories, metadata"
-          filename: habits.svg
+          filename: base.svg
