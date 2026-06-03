@@ -21,9 +21,6 @@ jobs:
 
           base_indepth: yes
 
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-
           plugin_habits: yes
           plugin_habits_charts: yes
           plugin_habits_charts_type: classic
@@ -31,3 +28,16 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_from: 1000
           plugin_habits_languages_limit: 8
+
+      - uses: gh-metrics/metrics@727b269a0e1af233e88b535a7555bb736e54b4b2
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: cloutierMat
+          template: classic
+          config_timezone: America/Edmonton
+          filename: iso-calendar.svg
+
+          base: ""
+
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
