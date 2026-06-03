@@ -17,7 +17,6 @@ jobs:
           user: cloutierMat
           template: classic
           config_timezone: America/Edmonton
-          config_display: columns
 
           base: header, activity, community, metadata
           base_indepth: yes
